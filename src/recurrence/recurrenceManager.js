@@ -771,7 +771,7 @@ export default class RecurrenceManager {
 	 *
 	 * @param {DateTimeValue} start Start of time-range
 	 * @param {DateTimeValue} end End of time-range
-	 * @return {(*|null)[]}
+	 * @return {AbstractRecurringComponent[]}
 	 */
 	getAllOccurrencesBetween(start, end) {
 		return Array.from(this.getAllOccurrencesBetweenIterator(start, end))

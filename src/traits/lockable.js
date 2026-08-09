@@ -32,7 +32,7 @@ export default function lockableTrait(baseClass) {
 		/**
 		 * Constructor
 		 *
-		 * @param {...any} args Arguments forwarded to the base class constructor
+		 * @param {...unknown} args Arguments forwarded to the base class constructor
 		 */
 		constructor(...args) {
 			super(...args)

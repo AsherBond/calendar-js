@@ -153,7 +153,7 @@ export default class AbstractParser {
 	/**
 	 * {String|Object} data
 	 *
-	 * @param {any} data The data to parse
+	 * @param {string|object} data The data to parse
 	 * @throws {TypeError}
 	 */
 	parse(data) {
@@ -225,7 +225,7 @@ export default class AbstractParser {
 	/**
 	 * Get a list of all errors that occurred
 	 *
-	 * @return {*[]}
+	 * @return {Error[]}
 	 */
 	getErrorList() {
 		return this._errors.slice()
@@ -243,9 +243,10 @@ export default class AbstractParser {
 	/**
 	 * Gets an option provided
 	 *
+	 * @template T
 	 * @param {string} name The name of the option to get
-	 * @param {*} defaultValue The default value to return if option not provided
-	 * @return {any}
+	 * @param {T} defaultValue The default value to return if option not provided
+	 * @return {T}
 	 * @protected
 	 */
 	_getOption(name, defaultValue) {

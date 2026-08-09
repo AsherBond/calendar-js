@@ -20,7 +20,7 @@
  */
 
 /**
- * @type {Map<string, *>}
+ * @type {Map<string, unknown>}
  */
 const GLOBAL_CONFIG = new Map()
 
@@ -28,7 +28,7 @@ const GLOBAL_CONFIG = new Map()
  * Sets a new config key
  *
  * @param {string} key The config-key to set
- * @param {*} value The value to set for given config-key
+ * @param {unknown} value The value to set for given config-key
  */
 export function setConfig(key, value) {
 	GLOBAL_CONFIG.set(key, value)
@@ -47,9 +47,10 @@ export function hasConfig(key) {
 /**
  * gets value of a config key
  *
+ * @template T
  * @param {string} key The config-key to get
- * @param {*} defaultValue Default value of config does not exist
- * @return {*}
+ * @param {T} defaultValue Default value of config does not exist
+ * @return {T}
  */
 export function getConfig(key, defaultValue) {
 	return GLOBAL_CONFIG.get(key) || defaultValue

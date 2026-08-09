@@ -48,7 +48,7 @@ export default class AbstractValue extends observerTrait(lockableTrait(class {})
 	/**
 	 * Gets wrapped ICAL.JS object
 	 *
-	 * @return {*}
+	 * @return {ICAL.Binary|ICAL.Duration|ICAL.Period|ICAL.Recur|ICAL.Time|ICAL.UtcOffset}
 	 */
 	toICALJs() {
 		return this._innerValue

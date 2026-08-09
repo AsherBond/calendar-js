@@ -177,7 +177,7 @@ export default class DurationValue extends AbstractValue {
 	/**
 	 * Gets the amount of total seconds of the stored duration-value
 	 *
-	 * @return {* | number}
+	 * @return {number}
 	 */
 	get totalSeconds() {
 		return this._innerValue.toSeconds()
