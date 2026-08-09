@@ -25,8 +25,8 @@ import ICAL from 'ical.js'
  * @class UTCOffsetValue
  * @classdesc Wrapper for ICAL.UtcOffset
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.14
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/utc_offset.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.14
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/utc_offset.js
  */
 export default class UTCOffsetValue extends AbstractValue {
 	/**

@@ -32,7 +32,7 @@ import { Timezone } from '@nextcloud/timezones'
  * Editing / accessing the timezone information directly is not a use-case
  * All the timezone-handling is done by the underlying ICAL.JS
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.6.5
+ * @see https://tools.ietf.org/html/rfc5545#section-3.6.5
  */
 export default class TimezoneComponent extends AbstractComponent {
 	/**

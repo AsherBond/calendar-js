@@ -33,7 +33,7 @@ ICAL.design.icalendar.param.feature = {
 /**
  * @class ConferenceProperty
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.11
+ * @see https://tools.ietf.org/html/rfc7986#section-5.11
  */
 export default class ConferenceProperty extends Property {
 	/**

@@ -26,7 +26,7 @@ import { startStringWith, uc } from '../helpers/stringHelper.js'
  * @class AttendeeProperty
  * @classdesc This class represents an attendee property as defined in RFC 5545 Section 3.8.4.1
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  */
 export default class AttendeeProperty extends Property {
 	/**

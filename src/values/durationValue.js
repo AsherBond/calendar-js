@@ -25,8 +25,8 @@ import ICAL from 'ical.js'
  * @class DurationValue
  * @classdesc Wrapper for ICAL.Duration
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.6
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/duration.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.6
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/duration.js
  */
 export default class DurationValue extends AbstractValue {
 	/**

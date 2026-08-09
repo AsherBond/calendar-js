@@ -26,7 +26,7 @@ import DateTimeValue from '../values/dateTimeValue.js'
  * @class TriggerProperty
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.6.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.6.3
  */
 export default class TriggerProperty extends Property {
 	/**

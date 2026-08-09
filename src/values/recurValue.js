@@ -29,8 +29,8 @@ const ALLOWED_FREQ = ['SECONDLY', 'MINUTELY', 'HOURLY', 'DAILY', 'WEEKLY', 'MONT
  * @class RecurValue
  * @classdesc Wrapper for ICAL.Recur
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.10
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/recur.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.10
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/recur.js
  */
 export default class RecurValue extends AbstractValue {
 	/**

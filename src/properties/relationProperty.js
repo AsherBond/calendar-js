@@ -24,7 +24,7 @@ import Property from './property.js'
  * @class RelationProperty
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.5
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.5
  */
 export default class RelationProperty extends Property {
 	/**

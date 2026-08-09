@@ -33,8 +33,8 @@ import ICAL from 'ical.js'
  * @class Property
  * @classdesc This class represents a property as defined in RFC 5545 Section 3.5
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.5
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/property.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.5
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/property.js
  */
 export default class Property extends observerTrait(lockableTrait(class {})) {
 	/**

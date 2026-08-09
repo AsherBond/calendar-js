@@ -24,7 +24,7 @@ import Property from './property.js'
  * @class FreeBusyProperty
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.2.6
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.2.6
  */
 export default class FreeBusyProperty extends Property {
 	/**

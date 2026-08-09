@@ -27,8 +27,8 @@ import observerTrait from '../traits/observer.js'
  * @class Parameter
  * @classdesc This class represents a property parameters as defined in RFC 5545 Section 3.2
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.2
- * @url
+ * @see https://tools.ietf.org/html/rfc5545#section-3.2
+ * @see
  */
 export default class Parameter extends observerTrait(lockableTrait(class {})) {
 	/**

@@ -27,8 +27,8 @@ import ICAL from 'ical.js'
  * @class PeriodValue
  * @classdesc Wrapper for ICAL.Period
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.9
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/period.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.9
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/period.js
  */
 export default class PeriodValue extends AbstractValue {
 	/**

@@ -28,7 +28,7 @@ import ICAL from 'ical.js'
 /**
  * This class represents one VCALENDAR block
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.4
  */
 export default class CalendarComponent extends AbstractComponent {
 	/**
@@ -149,7 +149,7 @@ export default class CalendarComponent extends AbstractComponent {
 /**
  * ProductId representing the software that created this calendar-document
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.7.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.7.3
  *
  * @name CalendarComponent#productId
  * @type {string}
@@ -164,7 +164,7 @@ advertiseSingleOccurrenceProperty(CalendarComponent.prototype, {
  * minver and maxver parameters are not supported, since they
  * are virtually used by no calendaring-software
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.7.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.7.4
  *
  * @name CalendarComponent#version
  * @type {string}
@@ -182,7 +182,7 @@ advertiseSingleOccurrenceProperty(CalendarComponent.prototype, {
  *
  * @see https://tools.ietf.org/html/rfc7529
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.7.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.7.1
  *
  * @name CalendarComponent#calendarScale
  * @type {string}
@@ -198,7 +198,7 @@ advertiseSingleOccurrenceProperty(CalendarComponent.prototype, {
  * Method of this calendar-document when being used in an iTIP message
  * Please see https://tools.ietf.org/html/rfc5546#section-3.2 for more information
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.7.2
+ * @see https://tools.ietf.org/html/rfc5545#section-3.7.2
  *
  * @name CalendarComponent#method
  * @type {string}

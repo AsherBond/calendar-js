@@ -708,7 +708,7 @@ export default class AbstractRecurringComponent extends AbstractComponent {
 	/**
 	 * Adds a new contact
 	 *
-	 * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.2
+	 * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.2
 	 *
 	 * @param {string} contact The textual contact description to add
 	 */
@@ -719,7 +719,7 @@ export default class AbstractRecurringComponent extends AbstractComponent {
 	/**
 	 * Adds a new comment
 	 *
-	 * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.4
+	 * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.4
 	 *
 	 * @param {string} comment The comment to add
 	 */
@@ -1026,7 +1026,7 @@ export default class AbstractRecurringComponent extends AbstractComponent {
  * Date-Time stamp of this object.
  * It has different meaning, based on whether or not a method is defined
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.7.2
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.7.2
  *
  * @name EventComponent#stampTime
  * @type {string}
@@ -1039,7 +1039,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, {
 /**
  * Recurrence-ID of this object, used for recurrence-exceptions
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.4
  *
  * @name EventComponent#recurrenceId
  * @type {string}
@@ -1052,7 +1052,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, {
 /**
  * Special color for this event / journal / task
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.9
+ * @see https://tools.ietf.org/html/rfc7986#section-5.9
  *
  * @name EventComponent#color
  * @type {string}
@@ -1062,7 +1062,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, 'color')
 /**
  * Creation Time of this event / journal / task
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.7.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.7.1
  *
  * @name EventComponent#creationTime
  * @type {string}
@@ -1075,7 +1075,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, {
 /**
  * The time this event / journal / task
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.7.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.7.3
  *
  * @name EventComponent#modificationTime
  * @type {string}
@@ -1088,7 +1088,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, {
 /**
  * Organizer of this event / journal / task
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.3
  *
  * @name EventComponent#organizer
  * @type {string}
@@ -1098,7 +1098,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, 'organiz
 /**
  * Revision of this this event / journal / task
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.7.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.7.4
  *
  * @name EventComponent#sequence
  * @type {string}
@@ -1109,7 +1109,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, 'sequenc
  * Status of this event / journal / task
  * This indicates whether an event is tentative / confirmed / cancelled
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.11
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.11
  *
  * @name EventComponent#status
  * @type {string}
@@ -1120,7 +1120,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, 'status'
  * URL of a more dynamic rendition of this event / journal / task
  * DO NOT use this to simply point to a website merely related.
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.6
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.6
  *
  * @name EventComponent#url
  * @type {string}
@@ -1130,7 +1130,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, 'url')
 /**
  * Title of this event / journal / task
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.12
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.12
  *
  * @name EventComponent#title
  * @type {string}
@@ -1144,7 +1144,7 @@ advertiseSingleOccurrenceProperty(AbstractRecurringComponent.prototype, {
  * Access class of this event / journal / task
  * This determines what other users can see when sharing
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.3
  *
  * @name EventComponent#accessClass
  * @type {string}

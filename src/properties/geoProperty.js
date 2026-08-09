@@ -26,7 +26,7 @@ import { lc } from '../helpers/stringHelper.js'
  * @class GeoProperty
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.6
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.6
  */
 export default class GeoProperty extends Property {
 	/**

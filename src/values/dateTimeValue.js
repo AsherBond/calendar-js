@@ -26,10 +26,10 @@ import ICAL from 'ical.js'
  * @class DateTimeValue
  * @classdesc Wrapper for ICAL.Time
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.4
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.5
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.12
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/time.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.5
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.12
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/time.js
  */
 export default class DateTimeValue extends AbstractValue {
 	/**

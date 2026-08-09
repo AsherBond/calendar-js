@@ -26,7 +26,7 @@ import { lc } from '../helpers/stringHelper.js'
  * @class RequestStatusProperty
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.8.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.8.3
  */
 export default class RequestStatusProperty extends Property {
 	/**

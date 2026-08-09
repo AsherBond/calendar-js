@@ -24,7 +24,7 @@ import BinaryValue from '../values/binaryValue.js'
 /**
  * @class ImageProperty
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.10
+ * @see https://tools.ietf.org/html/rfc7986#section-5.10
  */
 export default class ImageProperty extends AttachmentProperty {
 	/**
