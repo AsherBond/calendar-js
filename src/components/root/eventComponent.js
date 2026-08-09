@@ -342,7 +342,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, 'location')
  * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.9
  *
  * @name EventComponent#priority
- * @type Number
+ * @type {number}
  */
 advertiseSingleOccurrenceProperty(EventComponent.prototype, {
 	name: 'priority',
