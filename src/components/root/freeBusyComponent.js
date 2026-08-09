@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent, {
 	advertiseMultipleOccurrenceProperty,
@@ -33,7 +32,6 @@ import AttendeeProperty from '../../properties/attendeeProperty.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.6.4
  */
 export default class FreeBusyComponent extends AbstractComponent {
-
 	/**
 	 * Gets the start-date of the FreeBusy component
 	 *
@@ -76,7 +74,7 @@ export default class FreeBusyComponent extends AbstractComponent {
 	 * Gets an iterator over all FreeBusyProperties
 	 */
 	* getFreeBusyIterator() {
-		yield * this.getPropertyIterator('FREEBUSY')
+		yield* this.getPropertyIterator('FREEBUSY')
 	}
 
 	/**
@@ -105,7 +103,6 @@ export default class FreeBusyComponent extends AbstractComponent {
 		this.deleteAllProperties('ORGANIZER')
 		this.addProperty(AttendeeProperty.fromNameAndEMail(name, email, true))
 	}
-
 }
 
 /**

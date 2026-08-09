@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractValue from './abstractValue.js'
 import ICAL from 'ical.js'
@@ -30,7 +29,6 @@ import ICAL from 'ical.js'
  * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/utc_offset.js
  */
 export default class UTCOffsetValue extends AbstractValue {
-
 	/**
 	 * Gets the hour part of the offset-value
 	 *
@@ -171,5 +169,4 @@ export default class UTCOffsetValue extends AbstractValue {
 		const icalUTCOffset = ICAL.UtcOffset.fromSeconds(seconds)
 		return UTCOffsetValue.fromICALJs(icalUTCOffset)
 	}
-
 }

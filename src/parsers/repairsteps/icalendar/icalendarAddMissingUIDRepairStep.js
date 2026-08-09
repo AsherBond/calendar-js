@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractRepairStep from '../abstractRepairStep.js'
 import { randomUUID } from '../../../helpers/cryptoHelper.js'
@@ -26,7 +25,6 @@ import { randomUUID } from '../../../helpers/cryptoHelper.js'
  * @class ICalendarAddMissingUIDRepairStep
  */
 export default class ICalendarAddMissingUIDRepairStep extends AbstractRepairStep {
-
 	/**
 	 * Please see the corresponding test file for an example of broken calendar-data
 	 *
@@ -41,5 +39,4 @@ export default class ICalendarAddMissingUIDRepairStep extends AbstractRepairStep
 					+ 'END:' + vobjectName + '\r\n'
 			})
 	}
-
 }

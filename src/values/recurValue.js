@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractValue from './abstractValue.js'
 import DateTimeValue from './dateTimeValue.js'
@@ -34,7 +33,6 @@ const ALLOWED_FREQ = ['SECONDLY', 'MINUTELY', 'HOURLY', 'DAILY', 'WEEKLY', 'MONT
  * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/recur.js
  */
 export default class RecurValue extends AbstractValue {
-
 	/**
 	 * Constructor
 	 *
@@ -347,5 +345,4 @@ export default class RecurValue extends AbstractValue {
 		const icalRecur = ICAL.Recur.fromData(data)
 		return RecurValue.fromICALJs(icalRecur, until)
 	}
-
 }

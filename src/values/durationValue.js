@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractValue from './abstractValue.js'
 import ICAL from 'ical.js'
@@ -30,7 +29,6 @@ import ICAL from 'ical.js'
  * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/duration.js
  */
 export default class DurationValue extends AbstractValue {
-
 	/**
 	 * Gets the weeks of the stored duration-value
 	 *
@@ -258,7 +256,6 @@ export default class DurationValue extends AbstractValue {
 	static fromSeconds(seconds) {
 		const icalDuration = ICAL.Duration.fromSeconds(seconds)
 		return new DurationValue(icalDuration)
-
 	}
 
 	/**
@@ -277,5 +274,4 @@ export default class DurationValue extends AbstractValue {
 		const icalDuration = ICAL.Duration.fromData(data)
 		return new DurationValue(icalDuration)
 	}
-
 }

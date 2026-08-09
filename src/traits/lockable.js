@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import ModificationNotAllowedError from '../errors/modificationNotAllowedError.js'
 
@@ -26,12 +25,10 @@ import ModificationNotAllowedError from '../errors/modificationNotAllowedError.j
  * @param baseClass
  */
 export default function lockableTrait(baseClass) {
-
 	/**
 	 * @class LockableTrait
 	 */
 	return class extends baseClass {
-
 		/**
 		 * Constructor
 		 *
@@ -95,6 +92,5 @@ export default function lockableTrait(baseClass) {
 		_modifyContent() {
 			this._modify()
 		}
-
 	}
 }

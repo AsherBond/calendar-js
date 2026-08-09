@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent, {
 	advertiseSingleOccurrenceProperty,
@@ -32,7 +31,6 @@ import ICAL from 'ical.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.4
  */
 export default class CalendarComponent extends AbstractComponent {
-
 	/**
 	 * Constructor
 	 *
@@ -48,44 +46,44 @@ export default class CalendarComponent extends AbstractComponent {
 	 * Gets an iterator over all VTIMEZONE components
 	 */
 	* getTimezoneIterator() {
-		yield * this.getComponentIterator('vtimezone')
+		yield* this.getComponentIterator('vtimezone')
 	}
 
 	/**
 	 * Gets an iterator over all VObject components
 	 */
 	* getVObjectIterator() {
-		yield * this.getEventIterator()
-		yield * this.getJournalIterator()
-		yield * this.getTodoIterator()
+		yield* this.getEventIterator()
+		yield* this.getJournalIterator()
+		yield* this.getTodoIterator()
 	}
 
 	/**
 	 * Gets an iterator over all VEVENT components
 	 */
 	* getEventIterator() {
-		yield * this.getComponentIterator('vevent')
+		yield* this.getComponentIterator('vevent')
 	}
 
 	/**
 	 * Gets an iterator over all VFREEBUSY components
 	 */
 	* getFreebusyIterator() {
-		yield * this.getComponentIterator('vfreebusy')
+		yield* this.getComponentIterator('vfreebusy')
 	}
 
 	/**
 	 * Gets an iterator over all VJOURNAL components
 	 */
 	* getJournalIterator() {
-		yield * this.getComponentIterator('vjournal')
+		yield* this.getComponentIterator('vjournal')
 	}
 
 	/**
 	 * Gets an iterator over all VTODO components
 	 */
 	* getTodoIterator() {
-		yield * this.getComponentIterator('vtodo')
+		yield* this.getComponentIterator('vtodo')
 	}
 
 	/**
@@ -146,7 +144,6 @@ export default class CalendarComponent extends AbstractComponent {
 
 		return comp
 	}
-
 }
 
 /**

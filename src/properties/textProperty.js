@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 
@@ -26,7 +25,6 @@ import Property from './property.js'
  * @classdesc
  */
 export default class TextProperty extends Property {
-
 	/**
 	 * Gets the alternate text
 	 *
@@ -62,5 +60,4 @@ export default class TextProperty extends Property {
 	set language(language) {
 		this.updateParameterIfExist('LANGUAGE', language)
 	}
-
 }

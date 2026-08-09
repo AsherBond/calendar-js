@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 import { createProperty } from '../factories/icalFactory.js'
@@ -30,7 +29,6 @@ import { lc } from '../helpers/stringHelper.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.8.8.3
  */
 export default class RequestStatusProperty extends Property {
-
 	/**
 	 * @inheritDoc
 	 */
@@ -172,7 +170,6 @@ export default class RequestStatusProperty extends Property {
 	static fromCodeAndMessage(code, message) {
 		return new RequestStatusProperty('REQUEST-STATUS', [code.toString(), message])
 	}
-
 }
 
 // All request statuses registered in RFC 5546

@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractValue from './abstractValue.js'
 import ICAL from 'ical.js'
@@ -30,7 +29,6 @@ import ICAL from 'ical.js'
  * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/binary.js
  */
 export default class BinaryValue extends AbstractValue {
-
 	/**
 	 * Sets the raw b64 encoded value
 	 *
@@ -112,5 +110,4 @@ export default class BinaryValue extends AbstractValue {
 		icalBinary.setEncodedValue(decodedValue)
 		return BinaryValue.fromICALJs(icalBinary)
 	}
-
 }

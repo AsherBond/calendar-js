@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent, {
 	advertiseComponent,
@@ -55,7 +54,6 @@ import { getConstructorForComponentName } from '../nested/index.js'
  * components mentioned before have in common
  */
 export default class AbstractRecurringComponent extends AbstractComponent {
-
 	/**
 	 * @inheritDoc
 	 */
@@ -1022,7 +1020,6 @@ export default class AbstractRecurringComponent extends AbstractComponent {
 
 		return comp
 	}
-
 }
 
 /**

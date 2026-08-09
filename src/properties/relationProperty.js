@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 
@@ -28,7 +27,6 @@ import Property from './property.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.5
  */
 export default class RelationProperty extends Property {
-
 	/**
 	 * Get's the relation-type of this related-to property
 	 *
@@ -87,5 +85,4 @@ export default class RelationProperty extends Property {
 	static fromRelTypeAndId(relType, relId) {
 		return new RelationProperty('RELATED-TO', relId, [['RELTYPE', relType]])
 	}
-
 }

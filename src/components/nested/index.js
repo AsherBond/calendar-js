@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent from '../abstractComponent.js'
 import AlarmComponent from './alarmComponent.js'
@@ -33,10 +32,10 @@ import { uc } from '../../helpers/stringHelper.js'
  */
 export function getConstructorForComponentName(compName) {
 	switch (uc(compName)) {
-	case 'VALARM':
-		return AlarmComponent
+		case 'VALARM':
+			return AlarmComponent
 
-	default:
-		return AbstractComponent
+		default:
+			return AbstractComponent
 	}
 }

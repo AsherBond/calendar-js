@@ -18,7 +18,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 import { startStringWith, uc } from '../helpers/stringHelper.js'
@@ -30,7 +29,6 @@ import { startStringWith, uc } from '../helpers/stringHelper.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  */
 export default class AttendeeProperty extends Property {
-
 	/**
 	 * Returns the role of the attendee.
 	 *
@@ -223,7 +221,7 @@ export default class AttendeeProperty extends Property {
 	 * @param {string[]} members The email addresses of the groups
 	 */
 	set member(members) {
-		members = members.map(member => startStringWith(member, 'mailto:'))
+		members = members.map((member) => startStringWith(member, 'mailto:'))
 		this.updateParameterIfExist('MEMBER', members)
 	}
 
@@ -277,5 +275,4 @@ export default class AttendeeProperty extends Property {
 			['RSVP', rsvp ? 'TRUE' : 'FALSE'],
 		])
 	}
-
 }

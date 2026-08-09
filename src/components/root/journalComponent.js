@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractRecurringComponent from './abstractRecurringComponent.js'
 import { advertiseMultipleOccurrenceProperty } from '../abstractComponent.js'
@@ -30,7 +29,6 @@ import TextProperty from '../../properties/textProperty.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.6.3
  */
 export default class JournalComponent extends AbstractRecurringComponent {
-
 	/**
 	 * Adds a new description property
 	 *
@@ -41,7 +39,6 @@ export default class JournalComponent extends AbstractRecurringComponent {
 	addDescription(description) {
 		this.addProperty(new TextProperty('DESCRIPTION', description))
 	}
-
 }
 
 /**

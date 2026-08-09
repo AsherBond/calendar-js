@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractRepairStep from '../abstractRepairStep.js'
 
@@ -26,7 +25,6 @@ import AbstractRepairStep from '../abstractRepairStep.js'
  * @classdesc This repair step fixes malformed TRIGGER properties
  */
 export default class ICalendarEmptyTriggerRepairStep extends AbstractRepairStep {
-
 	/**
 	 * Please see the corresponding test file for an example of broken calendar-data
 	 *
@@ -37,5 +35,4 @@ export default class ICalendarEmptyTriggerRepairStep extends AbstractRepairStep 
 			.replace(/^TRIGGER(:|;.*)-P$/gm, 'TRIGGER$1P0D')
 			.replace(/^TRIGGER(:|;.*)P$/gm, 'TRIGGER$1P0D')
 	}
-
 }

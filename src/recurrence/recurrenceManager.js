@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from '../properties/property.js'
 import { uc } from '../helpers/stringHelper.js'
@@ -34,14 +33,12 @@ import ICAL from 'ical.js'
  * TODO: This needs caching
  */
 export default class RecurrenceManager {
-
 	/**
 	 * Constructor
 	 *
 	 * @param {AbstractRecurringComponent} masterItem The master-item of the recurrence-set
 	 */
 	constructor(masterItem) {
-
 		/**
 		 *
 		 * @type {AbstractRecurringComponent}
@@ -106,7 +103,7 @@ export default class RecurrenceManager {
 	 * Gets an iterator over all registered recurrence exceptions of this calendar-document
 	 */
 	* getRecurrenceExceptionIterator() {
-		yield * this._recurrenceExceptionItems.values()
+		yield* this._recurrenceExceptionItems.values()
 	}
 
 	/**
@@ -186,7 +183,7 @@ export default class RecurrenceManager {
 		const index = ICAL.helpers.binsearchInsert(
 			this._rangeRecurrenceExceptionItemsIndex,
 			recurrenceId,
-			(a, b) => a - b
+			(a, b) => a - b,
 		)
 
 		if (index === 0) {
@@ -245,7 +242,7 @@ export default class RecurrenceManager {
 			const index = ICAL.helpers.binsearchInsert(
 				this._rangeRecurrenceExceptionItemsIndex,
 				key,
-				(a, b) => a - b
+				(a, b) => a - b,
 			)
 
 			this._rangeRecurrenceExceptionItemsIndex.splice(index, 0, key)
@@ -358,7 +355,7 @@ export default class RecurrenceManager {
 	 */
 	* getRecurrenceDateIterator(isNegative = false, valueType = null) {
 		for (const property of this._getPropertiesForRecurrenceDate(isNegative, valueType)) {
-			yield * property.getValueIterator()
+			yield* property.getValueIterator()
 		}
 	}
 
@@ -713,15 +710,15 @@ export default class RecurrenceManager {
 			// For now we are only implementing events, other components will come later
 			let compareDate = null
 			switch (uc(occurrence.name)) {
-			case 'VEVENT':
-			case 'VTODO':
-				compareDate = occurrence.endDate.toICALJs()
-				break
+				case 'VEVENT':
+				case 'VTODO':
+					compareDate = occurrence.endDate.toICALJs()
+					break
 
-			case 'VJOURNAL':
-			default:
-				compareDate = next
-				break
+				case 'VJOURNAL':
+				default:
+					compareDate = next
+					break
 			}
 
 			// If the date we are comparing to is before our time-range,
@@ -912,7 +909,7 @@ export default class RecurrenceManager {
 			const index = ICAL.helpers.binsearchInsert(
 				ruleDates,
 				rDateValue,
-				(a, b) => a.compare(b)
+				(a, b) => a.compare(b),
 			)
 
 			ruleDates.splice(index, 0, rDateValue)
@@ -926,7 +923,7 @@ export default class RecurrenceManager {
 			ruleDateInc = ICAL.helpers.binsearchInsert(
 				ruleDates,
 				dtstart,
-				(a, b) => a.compare(b)
+				(a, b) => a.compare(b),
 			)
 			ruleDate = exDates[ruleDateInc]
 		}
@@ -936,7 +933,7 @@ export default class RecurrenceManager {
 			const index = ICAL.helpers.binsearchInsert(
 				exDates,
 				exDateValue,
-				(a, b) => a.compare(b)
+				(a, b) => a.compare(b),
 			)
 			exDates.splice(index, 0, exDateValue)
 		}
@@ -944,7 +941,7 @@ export default class RecurrenceManager {
 		const exDateInc = ICAL.helpers.binsearchInsert(
 			exDates,
 			dtstart,
-			(a, b) => a.compare(b)
+			(a, b) => a.compare(b),
 		)
 		const exDate = exDates[exDateInc]
 
@@ -970,5 +967,4 @@ export default class RecurrenceManager {
 			throw new ModificationNotAllowedError()
 		}
 	}
-
 }

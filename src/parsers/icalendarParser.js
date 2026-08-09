@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractParser from './abstractParser.js'
 import CalendarComponent from '../components/calendarComponent.js'
@@ -35,7 +34,6 @@ import TimezoneComponent from '../components/root/timezoneComponent.js'
  * @classdesc
  */
 export default class ICalendarParser extends AbstractParser {
-
 	/**
 	 * @inheritDoc
 	 */
@@ -384,7 +382,6 @@ export default class ICalendarParser extends AbstractParser {
 
 		for (const recurrenceExceptionList of this._recurrenceExceptionItems.values()) {
 			for (const recurrenceException of recurrenceExceptionList) {
-
 				// Check if there is a master item for this recurrence exception
 				// otherwise we have to forge one
 				if (!this._masterItems.has(recurrenceException.uid)) {
@@ -570,21 +567,21 @@ export default class ICalendarParser extends AbstractParser {
 	 */
 	_markCompTypeAsSeen(compName) {
 		switch (uc(compName)) {
-		case 'VEVENT':
-			this._containsVEvents = true
-			break
+			case 'VEVENT':
+				this._containsVEvents = true
+				break
 
-		case 'VJOURNAL':
-			this._containsVJournals = true
-			break
+			case 'VJOURNAL':
+				this._containsVJournals = true
+				break
 
-		case 'VTODO':
-			this._containsVTodos = true
-			break
+			case 'VTODO':
+				this._containsVTodos = true
+				break
 
-		case 'VFREEBUSY':
-			this._containsVFreeBusy = true
-			break
+			case 'VFREEBUSY':
+				this._containsVFreeBusy = true
+				break
 		}
 	}
 
@@ -594,5 +591,4 @@ export default class ICalendarParser extends AbstractParser {
 	static getMimeTypes() {
 		return ['text/calendar']
 	}
-
 }

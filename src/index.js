@@ -19,7 +19,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import { getParserManager } from './parsers/parserManager.js'
 import { randomUUID } from './helpers/cryptoHelper.js'
@@ -38,7 +37,7 @@ import FreeBusyComponent from './components/root/freeBusyComponent.js'
  * @param {DateTimeValue} start The start of the queried time-range
  * @param {DateTimeValue} end The end of the queried time-range
  */
-export function * parseICSAndGetAllOccurrencesBetween(ics, start, end) {
+export function* parseICSAndGetAllOccurrencesBetween(ics, start, end) {
 	const parserManager = getParserManager()
 	const icsParser = parserManager.getParserForFileType('text/calendar')
 	icsParser.parse(ics)
@@ -55,7 +54,7 @@ export function * parseICSAndGetAllOccurrencesBetween(ics, start, end) {
 		return
 	}
 
-	yield * firstVObject.recurrenceManager.getAllOccurrencesBetweenIterator(start, end)
+	yield* firstVObject.recurrenceManager.getAllOccurrencesBetweenIterator(start, end)
 }
 
 /**

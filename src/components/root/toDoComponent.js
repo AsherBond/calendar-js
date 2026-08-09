@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractRecurringComponent from './abstractRecurringComponent.js'
 import {
@@ -35,7 +34,6 @@ import GeoProperty from '../../properties/geoProperty.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.6.2
  */
 export default class ToDoComponent extends AbstractRecurringComponent {
-
 	/**
 	 * Returns whether this event is an all-day event
 	 *
@@ -209,7 +207,6 @@ export default class ToDoComponent extends AbstractRecurringComponent {
 	getReferenceRecurrenceId() {
 		return super.getReferenceRecurrenceId() ?? this.endDate
 	}
-
 }
 
 /**

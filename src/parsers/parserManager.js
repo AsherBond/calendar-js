@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import ICalendarParser from './icalendarParser.js'
 
@@ -26,12 +25,10 @@ import ICalendarParser from './icalendarParser.js'
  * @classdesc
  */
 export default class ParserManager {
-
 	/**
 	 * Constructor
 	 */
 	constructor() {
-
 		/**
 		 * List of supported parsers
 		 *
@@ -48,7 +45,8 @@ export default class ParserManager {
 	getAllSupportedFileTypes() {
 		return this._parsers.reduce(
 			(allFileTypes, parser) => allFileTypes.concat(parser.getMimeTypes()),
-			[])
+			[],
+		)
 	}
 
 	/**
@@ -65,8 +63,7 @@ export default class ParserManager {
 	 * @return {AbstractParser}
 	 */
 	getParserForFileType(fileType, options) {
-		const Parser = this._parsers.find(
-			(parser) => parser.getMimeTypes().includes(fileType))
+		const Parser = this._parsers.find((parser) => parser.getMimeTypes().includes(fileType))
 
 		if (!Parser) {
 			throw new TypeError('Unknown file-type.')
@@ -83,7 +80,6 @@ export default class ParserManager {
 	registerParser(parser) {
 		this._parsers.push(parser)
 	}
-
 }
 
 /**

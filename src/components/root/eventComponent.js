@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractRecurringComponent from './abstractRecurringComponent.js'
 import {
@@ -41,7 +40,6 @@ import ConferenceProperty from '../../properties/conferenceProperty.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.6.1
  */
 export default class EventComponent extends AbstractRecurringComponent {
-
 	/**
 	 * Returns whether this event is an all-day event
 	 *
@@ -287,7 +285,6 @@ export default class EventComponent extends AbstractRecurringComponent {
 	isInTimeFrame(start, end) {
 		return start.compare(this.endDate) <= 0 && end.compare(this.startDate) >= 0
 	}
-
 }
 
 /**

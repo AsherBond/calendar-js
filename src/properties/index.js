@@ -19,7 +19,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AttachmentProperty from './attachmentProperty.js'
 import AttendeeProperty from './attendeeProperty.js'
@@ -41,43 +40,43 @@ import { uc } from '../helpers/stringHelper.js'
  */
 export function getConstructorForPropertyName(propName) {
 	switch (uc(propName)) {
-	case 'ATTACH':
-		return AttachmentProperty
+		case 'ATTACH':
+			return AttachmentProperty
 
-	case 'ATTENDEE':
-	case 'ORGANIZER':
-		return AttendeeProperty
+		case 'ATTENDEE':
+		case 'ORGANIZER':
+			return AttendeeProperty
 
-	case 'CONFERENCE':
-		return ConferenceProperty
+		case 'CONFERENCE':
+			return ConferenceProperty
 
-	case 'FREEBUSY':
-		return FreeBusyProperty
+		case 'FREEBUSY':
+			return FreeBusyProperty
 
-	case 'GEO':
-		return GeoProperty
+		case 'GEO':
+			return GeoProperty
 
-	case 'IMAGE':
-		return ImageProperty
+		case 'IMAGE':
+			return ImageProperty
 
-	case 'RELATED-TO':
-		return RelationProperty
+		case 'RELATED-TO':
+			return RelationProperty
 
-	case 'REQUEST-STATUS':
-		return RequestStatusProperty
+		case 'REQUEST-STATUS':
+			return RequestStatusProperty
 
-	case 'TRIGGER':
-		return TriggerProperty
+		case 'TRIGGER':
+			return TriggerProperty
 
-	case 'COMMENT':
-	case 'CONTACT':
-	case 'DESCRIPTION':
-	case 'LOCATION':
-	case 'SUMMARY':
-		return TextProperty
+		case 'COMMENT':
+		case 'CONTACT':
+		case 'DESCRIPTION':
+		case 'LOCATION':
+		case 'SUMMARY':
+			return TextProperty
 
-	default:
-		return Property
+		default:
+			return Property
 	}
 }
 

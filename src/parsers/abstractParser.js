@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 
 /**
@@ -25,7 +24,6 @@
  * @classdesc
  */
 export default class AbstractParser {
-
 	/**
 	 * @class
 	 *
@@ -47,7 +45,7 @@ export default class AbstractParser {
 		 * @type {{removeRSVPForAttendees: boolean}}
 		 * @private
 		 */
-		this._options = Object.assign({}, options)
+		this._options = { ...options }
 
 		/**
 		 * A name extracted from the calendar-data
@@ -250,7 +248,7 @@ export default class AbstractParser {
 	 * @protected
 	 */
 	_getOption(name, defaultValue) {
-		return Object.prototype.hasOwnProperty.call(this._options, name)
+		return Object.hasOwn(this._options, name)
 			? this._options[name]
 			: defaultValue
 	}
@@ -263,5 +261,4 @@ export default class AbstractParser {
 	static getMimeTypes() {
 		throw new TypeError('Abstract method not implemented by subclass')
 	}
-
 }

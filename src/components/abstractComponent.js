@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import lockableTrait from '../traits/lockable.js'
 import ExpectedICalJSError from '../errors/expectedICalJSError.js'
@@ -33,7 +32,6 @@ import ICAL from 'ical.js'
  * @class AbstractComponent
  */
 export default class AbstractComponent extends observerTrait(lockableTrait(class {})) {
-
 	/**
 	 * Constructor
 	 *
@@ -124,7 +122,6 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
 		for (const component of this.getComponentIterator()) {
 			component.root = root
 		}
-
 	}
 
 	/**
@@ -208,10 +205,10 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
 
 			// this._properties.get() returns an array
 			// [Symbol.iterator]() creates an iterator from that array
-			yield * this._properties.get(uc(propertyName)).slice()[Symbol.iterator]()
+			yield* this._properties.get(uc(propertyName)).slice()[Symbol.iterator]()
 		} else {
 			for (const key of this._properties.keys()) {
-				yield * this.getPropertyIterator(key)
+				yield* this.getPropertyIterator(key)
 			}
 		}
 	}
@@ -354,10 +351,10 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
 
 			// this._components.get() returns an array
 			// [Symbol.iterator]() creates an iterator from that array
-			yield * this._components.get(uc(componentName)).slice()[Symbol.iterator]()
+			yield* this._components.get(uc(componentName)).slice()[Symbol.iterator]()
 		} else {
 			for (const key of this._components.keys()) {
-				yield * this.getComponentIterator(key)
+				yield* this.getComponentIterator(key)
 			}
 		}
 	}
@@ -582,7 +579,6 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
 
 		return component
 	}
-
 }
 
 /**
@@ -640,8 +636,8 @@ export function advertiseSingleOccurrenceProperty(prototype, options, advertiseV
 export function advertiseMultipleOccurrenceProperty(prototype, options) {
 	options = getDefaultMultiplePropConfig(options)
 
-	prototype['get' + ucFirst(options.name) + 'Iterator'] = function * () {
-		yield * this.getPropertyIterator(options.iCalendarName)
+	prototype['get' + ucFirst(options.name) + 'Iterator'] = function* () {
+		yield* this.getPropertyIterator(options.iCalendarName)
 	}
 
 	prototype['get' + ucFirst(options.name) + 'List'] = function() {
@@ -669,9 +665,9 @@ export function advertiseMultipleOccurrenceProperty(prototype, options) {
 export function advertiseMultiValueStringPropertySeparatedByLang(prototype, options) {
 	options = getDefaultMultiplePropConfig(options)
 
-	prototype['get' + ucFirst(options.name) + 'Iterator'] = function * (lang = null) {
+	prototype['get' + ucFirst(options.name) + 'Iterator'] = function* (lang = null) {
 		for (const property of this._getAllOfPropertyByLang(options.iCalendarName, lang)) {
-			yield * property.getValueIterator()
+			yield* property.getValueIterator()
 		}
 	}
 
@@ -726,8 +722,8 @@ export function advertiseMultiValueStringPropertySeparatedByLang(prototype, opti
 export function advertiseComponent(prototype, options) {
 	options = getDefaultMultipleCompConfig(options)
 
-	prototype['get' + ucFirst(options.name) + 'Iterator'] = function * () {
-		yield * this.getComponentIterator(options.iCalendarName)
+	prototype['get' + ucFirst(options.name) + 'Iterator'] = function* () {
+		yield* this.getComponentIterator(options.iCalendarName)
 	}
 
 	prototype['get' + ucFirst(options.name) + 'List'] = function() {
@@ -761,13 +757,7 @@ function getDefaultOncePropConfig(options) {
 		}
 	}
 
-	return Object.assign({}, {
-		iCalendarName: uc(options.name),
-		pluralName: options.name + 's',
-		allowedValues: null,
-		defaultValue: null,
-		unknownValue: null,
-	}, options)
+	return { iCalendarName: uc(options.name), pluralName: options.name + 's', allowedValues: null, defaultValue: null, unknownValue: null, ...options }
 }
 
 /**
@@ -786,10 +776,7 @@ function getDefaultMultiplePropConfig(options) {
 		}
 	}
 
-	return Object.assign({}, {
-		iCalendarName: uc(options.name),
-		pluralName: options.name + 's',
-	}, options)
+	return { iCalendarName: uc(options.name), pluralName: options.name + 's', ...options }
 }
 
 /**
@@ -808,8 +795,5 @@ function getDefaultMultipleCompConfig(options) {
 		}
 	}
 
-	return Object.assign({}, {
-		iCalendarName: 'V' + uc(options.name),
-		pluralName: options.name + 's',
-	}, options)
+	return { iCalendarName: 'V' + uc(options.name), pluralName: options.name + 's', ...options }
 }

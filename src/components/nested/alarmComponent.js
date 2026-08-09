@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent, {
 	advertiseMultipleOccurrenceProperty,
@@ -33,7 +32,6 @@ import TriggerProperty from '../../properties/triggerProperty.js'
  * @url https://tools.ietf.org/html/rfc5545#section-3.6.6
  */
 export default class AlarmComponent extends AbstractComponent {
-
 	/**
 	 * Adds a new attendee based on their name and email-address
 	 *
@@ -79,7 +77,6 @@ export default class AlarmComponent extends AbstractComponent {
 		this.deleteAllProperties('TRIGGER')
 		this.addProperty(triggerProperty)
 	}
-
 }
 
 /**

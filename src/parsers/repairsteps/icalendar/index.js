@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import ICalendarAddMissingUIDRepairStep from './icalendarAddMissingUIDRepairStep.js'
 import ICalendarAddMissingValueDateDoubleColonRepairStep from './icalendarAddMissingValueDateDoubleColonRepairStep.js'
@@ -32,7 +31,7 @@ import ICalendarConvertInvalidDateTimeValuesRepairStep from './icalendarConvertI
 /**
  * Get an iterator over all repair steps for iCalendar documents
  */
-export function * getRepairSteps() {
+export function* getRepairSteps() {
 	yield ICalendarAddMissingUIDRepairStep
 	yield ICalendarAddMissingValueDateDoubleColonRepairStep
 	yield ICalendarAddMissingValueDateRepairStep
