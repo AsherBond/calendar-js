@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 import ICAL from 'ical.js'
@@ -34,13 +33,14 @@ ICAL.design.icalendar.param.feature = {
 /**
  * @class ConferenceProperty
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.11
+ * @see https://tools.ietf.org/html/rfc7986#section-5.11
  */
 export default class ConferenceProperty extends Property {
-
 	/**
 	 * Iterator that iterates over all supported features
 	 * of the conference system
+	 *
+	 * @yields {string} A supported conference feature
 	 */
 	* getFeatureIterator() {
 		if (!this.hasParameter('FEATURE')) {
@@ -48,7 +48,7 @@ export default class ConferenceProperty extends Property {
 		}
 
 		const parameter = this.getParameter('FEATURE')
-		yield * parameter.getValueIterator()
+		yield* parameter.getValueIterator()
 	}
 
 	/**
@@ -190,5 +190,4 @@ export default class ConferenceProperty extends Property {
 
 		return property
 	}
-
 }

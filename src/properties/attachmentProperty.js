@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 import BinaryValue from '../values/binaryValue.js'
@@ -26,10 +25,9 @@ import BinaryValue from '../values/binaryValue.js'
  * @class AttachmentProperty
  * @classdesc This class represents an attachment property as defined in RFC 5545 Section 3.8.1.1
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.1
  */
 export default class AttachmentProperty extends Property {
-
 	/**
 	 * Gets the format-type of this attachment
 	 *
@@ -155,5 +153,4 @@ export default class AttachmentProperty extends Property {
 
 		return property
 	}
-
 }

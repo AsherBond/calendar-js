@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AttachmentProperty from './attachmentProperty.js'
 import BinaryValue from '../values/binaryValue.js'
@@ -25,10 +24,9 @@ import BinaryValue from '../values/binaryValue.js'
 /**
  * @class ImageProperty
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.10
+ * @see https://tools.ietf.org/html/rfc7986#section-5.10
  */
 export default class ImageProperty extends AttachmentProperty {
-
 	/**
 	 * Gets the image-type
 	 */
@@ -89,5 +87,4 @@ export default class ImageProperty extends AttachmentProperty {
 
 		return property
 	}
-
 }

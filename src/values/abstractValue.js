@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import lockableTrait from '../traits/lockable.js'
 import observerTrait from '../traits/observer.js'
@@ -27,7 +26,6 @@ import observerTrait from '../traits/observer.js'
  * @classdesc BaseClass for all values
  */
 export default class AbstractValue extends observerTrait(lockableTrait(class {})) {
-
 	/**
 	 * Constructor
 	 *
@@ -50,7 +48,7 @@ export default class AbstractValue extends observerTrait(lockableTrait(class {})
 	/**
 	 * Gets wrapped ICAL.JS object
 	 *
-	 * @return {*}
+	 * @return {ICAL.Binary|ICAL.Duration|ICAL.Period|ICAL.Recur|ICAL.Time|ICAL.UtcOffset}
 	 */
 	toICALJs() {
 		return this._innerValue
@@ -63,5 +61,4 @@ export default class AbstractValue extends observerTrait(lockableTrait(class {})
 		super._modifyContent()
 		this._notifySubscribers()
 	}
-
 }

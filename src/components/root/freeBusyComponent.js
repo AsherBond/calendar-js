@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent, {
 	advertiseMultipleOccurrenceProperty,
@@ -30,10 +29,9 @@ import AttendeeProperty from '../../properties/attendeeProperty.js'
  * @class FreeBusyComponent
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.6.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.6.4
  */
 export default class FreeBusyComponent extends AbstractComponent {
-
 	/**
 	 * Gets the start-date of the FreeBusy component
 	 *
@@ -74,15 +72,17 @@ export default class FreeBusyComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all FreeBusyProperties
+	 *
+	 * @yields {FreeBusyProperty} A free-busy property
 	 */
 	* getFreeBusyIterator() {
-		yield * this.getPropertyIterator('FREEBUSY')
+		yield* this.getPropertyIterator('FREEBUSY')
 	}
 
 	/**
 	 * Adds a new attendee based on their name and email-address
 	 *
-	 * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+	 * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
 	 *
 	 * @param {string} name The name of the attendee to add
 	 * @param {string} email The email-address of the attendee to add
@@ -95,7 +95,7 @@ export default class FreeBusyComponent extends AbstractComponent {
 	/**
 	 * Sets the organiser property from common-name and email address
 	 *
-	 * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.3
+	 * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.3
 	 *
 	 * @param {string} name The name of the organizer
 	 * @param {string} email The email-address of the organizer
@@ -105,13 +105,12 @@ export default class FreeBusyComponent extends AbstractComponent {
 		this.deleteAllProperties('ORGANIZER')
 		this.addProperty(AttendeeProperty.fromNameAndEMail(name, email, true))
 	}
-
 }
 
 /**
  * The organizer of this FreeBusy component
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.3
  *
  * @name FreeBusyComponent#organizer
  * @type {AttendeeProperty}
@@ -121,7 +120,7 @@ advertiseSingleOccurrenceProperty(FreeBusyComponent.prototype, 'organizer')
 /**
  * The UID of this FreeBusy component
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.7
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.7
  *
  * @name FreeBusyComponent#organizer
  * @type {AttendeeProperty}
@@ -131,7 +130,7 @@ advertiseSingleOccurrenceProperty(FreeBusyComponent.prototype, 'uid')
 /**
  * Returns an iterator of all attendees
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name FreeBusyComponent#getAttendeeIterator
  * @function
@@ -141,7 +140,7 @@ advertiseSingleOccurrenceProperty(FreeBusyComponent.prototype, 'uid')
 /**
  * Returns a list of all attendees
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name FreeBusyComponent#getAttendeeList
  * @function
@@ -151,7 +150,7 @@ advertiseSingleOccurrenceProperty(FreeBusyComponent.prototype, 'uid')
 /**
  * Removes an attendee
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name FreeBusyComponent#removeAttendee
  * @function
@@ -161,7 +160,7 @@ advertiseSingleOccurrenceProperty(FreeBusyComponent.prototype, 'uid')
 /**
  * Removes all attendees
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name FreeBusyComponent#clearAllAttendees
  * @function

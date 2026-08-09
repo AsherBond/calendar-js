@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 
@@ -25,10 +24,9 @@ import Property from './property.js'
  * @class FreeBusyProperty
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.2.6
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.2.6
  */
 export default class FreeBusyProperty extends Property {
-
 	/**
 	 * Gets the type of this FreeBusyProperty
 	 *
@@ -67,5 +65,4 @@ export default class FreeBusyProperty extends Property {
 	static fromPeriodAndType(period, type) {
 		return new FreeBusyProperty('FREEBUSY', period, [['fbtype', type]])
 	}
-
 }

@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 import DurationValue from '../values/durationValue.js'
@@ -27,10 +26,9 @@ import DateTimeValue from '../values/dateTimeValue.js'
  * @class TriggerProperty
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.6.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.6.3
  */
 export default class TriggerProperty extends Property {
-
 	/**
 	 * Gets the related parameter
 	 *
@@ -108,5 +106,4 @@ export default class TriggerProperty extends Property {
 	static fromRelativeAndRelated(alarmOffset, relatedToStart = true) {
 		return new TriggerProperty('TRIGGER', alarmOffset, [['RELATED', relatedToStart ? 'START' : 'END']])
 	}
-
 }

@@ -17,24 +17,21 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 
 /**
  *
- * @param baseClass
+ * @param {new (...args: unknown[]) => object} baseClass Base class to extend
  */
 export default function observerTrait(baseClass) {
-
 	/**
 	 * @class ObserverTrait
 	 */
 	return class extends baseClass {
-
 		/**
 		 * Constructor
 		 *
-		 * @param {...any} args
+		 * @param {...unknown} args Arguments forwarded to the base class constructor
 		 */
 		constructor(...args) {
 			super(...args)
@@ -42,7 +39,7 @@ export default function observerTrait(baseClass) {
 			/**
 			 * List of subscribers
 			 *
-			 * @type {Function[]}
+			 * @type {Array<(...args: unknown[]) => void>}
 			 * @private
 			 */
 			this._subscribers = []
@@ -51,7 +48,7 @@ export default function observerTrait(baseClass) {
 		/**
 		 * Adds a new subscriber
 		 *
-		 * @param {Function} handler - Handler to be called when modification happens
+		 * @param {(...args: unknown[]) => void} handler - Handler to be called when modification happens
 		 */
 		subscribe(handler) {
 			this._subscribers.push(handler)
@@ -60,7 +57,7 @@ export default function observerTrait(baseClass) {
 		/**
 		 * Removes a subscriber
 		 *
-		 * @param {Function} handler - Handler to be no longer called when modification happens
+		 * @param {(...args: unknown[]) => void} handler - Handler to be no longer called when modification happens
 		 */
 		unsubscribe(handler) {
 			const index = this._subscribers.indexOf(handler)
@@ -74,7 +71,7 @@ export default function observerTrait(baseClass) {
 		/**
 		 * Notify all subscribed handlers
 		 *
-		 * @param {...any} args
+		 * @param {...unknown} args Arguments forwarded to subscribed handlers
 		 * @protected
 		 */
 		_notifySubscribers(...args) {
@@ -82,6 +79,5 @@ export default function observerTrait(baseClass) {
 				handler(...args)
 			}
 		}
-
 	}
 }

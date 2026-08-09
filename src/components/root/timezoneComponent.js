@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent, {
 	advertiseSingleOccurrenceProperty,
@@ -33,10 +32,9 @@ import { Timezone } from '@nextcloud/timezones'
  * Editing / accessing the timezone information directly is not a use-case
  * All the timezone-handling is done by the underlying ICAL.JS
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.6.5
+ * @see https://tools.ietf.org/html/rfc5545#section-3.6.5
  */
 export default class TimezoneComponent extends AbstractComponent {
-
 	/**
 	 * Returns a calendar-js Timezone object
 	 *
@@ -45,7 +43,6 @@ export default class TimezoneComponent extends AbstractComponent {
 	toTimezone() {
 		return new Timezone(this.toICALJs())
 	}
-
 }
 
 /**

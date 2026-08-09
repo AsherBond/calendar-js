@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import ExpectedICalJSError from '../errors/expectedICalJSError.js'
 import Parameter from '../parameters/parameter.js'
@@ -34,11 +33,10 @@ import ICAL from 'ical.js'
  * @class Property
  * @classdesc This class represents a property as defined in RFC 5545 Section 3.5
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.5
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/property.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.5
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/property.js
  */
 export default class Property extends observerTrait(lockableTrait(class {})) {
-
 	/**
 	 * Constructor
 	 *
@@ -189,10 +187,12 @@ export default class Property extends observerTrait(lockableTrait(class {})) {
 
 	/**
 	 * Gets an iterator over all values
+	 *
+	 * @yields {string|number|AbstractValue} A property value
 	 */
 	* getValueIterator() {
 		if (this.isMultiValue()) {
-			yield * this.value.slice()[Symbol.iterator]()
+			yield* this.value.slice()[Symbol.iterator]()
 		} else {
 			yield this.value
 		}
@@ -265,9 +265,11 @@ export default class Property extends observerTrait(lockableTrait(class {})) {
 
 	/**
 	 * Gets an iterator over all available parameters
+	 *
+	 * @yields {Parameter} A property parameter
 	 */
 	* getParametersIterator() {
-		yield * this._parameters.values()
+		yield* this._parameters.values()
 	}
 
 	/**
@@ -470,7 +472,7 @@ export default class Property extends observerTrait(lockableTrait(class {})) {
 		}
 
 		const parameters = []
-		const paramNames = Object.keys(Object.assign({}, icalProperty.toJSON()[1]))
+		const paramNames = Object.keys({ ...icalProperty.toJSON()[1] })
 		paramNames.forEach((paramName) => {
 			// Timezone id is handled by DateTimeValue
 			if (uc(paramName) === 'TZID') {
@@ -502,7 +504,6 @@ export default class Property extends observerTrait(lockableTrait(class {})) {
 				icalProperty.setValue(this.value.toICALJs())
 			} else {
 				icalProperty.setValue(this.value)
-
 			}
 		}
 
@@ -528,5 +529,4 @@ export default class Property extends observerTrait(lockableTrait(class {})) {
 		super._modifyContent()
 		this._notifySubscribers()
 	}
-
 }

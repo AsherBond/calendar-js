@@ -19,7 +19,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractValue from './abstractValue.js'
 import BinaryValue from './binaryValue.js'
@@ -38,27 +37,27 @@ import { lc } from '../helpers/stringHelper.js'
  */
 export function getConstructorForICALType(icaltype) {
 	switch (lc(icaltype)) {
-	case 'binary':
-		return BinaryValue
+		case 'binary':
+			return BinaryValue
 
-	case 'date':
-	case 'date-time':
-		return DateTimeValue
+		case 'date':
+		case 'date-time':
+			return DateTimeValue
 
-	case 'duration':
-		return DurationValue
+		case 'duration':
+			return DurationValue
 
-	case 'period':
-		return PeriodValue
+		case 'period':
+			return PeriodValue
 
-	case 'recur':
-		return RecurValue
+		case 'recur':
+			return RecurValue
 
-	case 'utc-offset':
-		return UTCOffsetValue
+		case 'utc-offset':
+			return UTCOffsetValue
 
-	default:
-		throw new UnknownICALTypeError()
+		default:
+			throw new UnknownICALTypeError()
 	}
 }
 

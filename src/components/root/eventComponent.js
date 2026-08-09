@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractRecurringComponent from './abstractRecurringComponent.js'
 import {
@@ -38,10 +37,9 @@ import ConferenceProperty from '../../properties/conferenceProperty.js'
  * @class EventComponent
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.6.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.6.1
  */
 export default class EventComponent extends AbstractRecurringComponent {
-
 	/**
 	 * Returns whether this event is an all-day event
 	 *
@@ -130,7 +128,7 @@ export default class EventComponent extends AbstractRecurringComponent {
 	/**
 	 * Sets the geographical position based on latitude and longitude
 	 *
-	 * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.6
+	 * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.6
 	 *
 	 * @param {number} lat - latitude
 	 * @param {number} long - longitude
@@ -143,7 +141,7 @@ export default class EventComponent extends AbstractRecurringComponent {
 	/**
 	 * Adds a new conference property based on URI, label and features
 	 *
-	 * @url https://tools.ietf.org/html/rfc7986#section-5.11
+	 * @see https://tools.ietf.org/html/rfc7986#section-5.11
 	 *
 	 * @param {string} uri The URI of the conference system
 	 * @param {string=} label The label for the conference system
@@ -287,14 +285,13 @@ export default class EventComponent extends AbstractRecurringComponent {
 	isInTimeFrame(start, end) {
 		return start.compare(this.endDate) <= 0 && end.compare(this.startDate) >= 0
 	}
-
 }
 
 /**
  * Time-transparency of this event.
  * If set to TRANSPARENT, this event will be ignored for FREE/BUSY calculations.
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.2.7
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.2.7
  *
  * @name EventComponent#timeTransparency
  * @type {string}
@@ -309,7 +306,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, {
 /**
  * Description of this event.
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.5
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.5
  *
  * @name EventComponent#description
  * @type {string}
@@ -319,7 +316,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, 'description')
 /**
  * Geographical position of this event
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.6
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.6
  *
  * @name EventComponent#geographicalPosition
  * @type {string}
@@ -332,7 +329,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, {
 /**
  * Location that this event takes place in
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.7
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.7
  *
  * @name EventComponent#location
  * @type {string}
@@ -342,10 +339,10 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, 'location')
 /**
  * Priority of this event
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.9
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.9
  *
  * @name EventComponent#priority
- * @type Number
+ * @type {number}
  */
 advertiseSingleOccurrenceProperty(EventComponent.prototype, {
 	name: 'priority',
@@ -359,7 +356,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, {
  * If the parameter lang is given, it will only
  * return an iterator for Resources matching that language
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.10
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.10
  *
  * @name EventComponent#getResourceIterator
  * @function
@@ -372,7 +369,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, {
  * If the parameter lang is given, it will only
  * return an iterator for resources matching that language
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.10
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.10
  *
  * @name EventComponent#getResourceList
  * @function
@@ -383,7 +380,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, {
 /**
  * Adds a resource
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.10
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.10
  *
  * @name EventComponent#addResource
  * @function
@@ -394,7 +391,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, {
 /**
  * Removes a resource
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.10
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.10
  *
  * @name EventComponent#removeResource
  * @function
@@ -405,7 +402,7 @@ advertiseSingleOccurrenceProperty(EventComponent.prototype, {
 /**
  * Removes all resources from this event
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.10
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.10
  *
  * @name EventComponent#clearAllResources
  * @function
@@ -419,7 +416,7 @@ advertiseMultiValueStringPropertySeparatedByLang(EventComponent.prototype, {
 /**
  * Gets an iterator over all conference properties
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.11
+ * @see https://tools.ietf.org/html/rfc7986#section-5.11
  *
  * @name EventComponent#getConferenceIterator
  * @function
@@ -429,7 +426,7 @@ advertiseMultiValueStringPropertySeparatedByLang(EventComponent.prototype, {
 /**
  * Gets a list of all conference properties
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.11
+ * @see https://tools.ietf.org/html/rfc7986#section-5.11
  *
  * @name EventComponent#getConferenceList
  * @function
@@ -439,7 +436,7 @@ advertiseMultiValueStringPropertySeparatedByLang(EventComponent.prototype, {
 /**
  * Removes a conference from this event
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.11
+ * @see https://tools.ietf.org/html/rfc7986#section-5.11
  *
  * @name EventComponent#removeConference
  * @function
@@ -449,7 +446,7 @@ advertiseMultiValueStringPropertySeparatedByLang(EventComponent.prototype, {
 /**
  * Removes all conferences from this event
  *
- * @url https://tools.ietf.org/html/rfc7986#section-5.11
+ * @see https://tools.ietf.org/html/rfc7986#section-5.11
  *
  * @name EventComponent#clearAllConferences
  * @function

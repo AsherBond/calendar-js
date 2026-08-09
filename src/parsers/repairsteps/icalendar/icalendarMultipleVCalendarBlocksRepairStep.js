@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractRepairStep from '../abstractRepairStep.js'
 import { uc } from '../../../helpers/stringHelper.js'
@@ -27,7 +26,6 @@ import { uc } from '../../../helpers/stringHelper.js'
  * @classdesc This repair step merges multiple BEGIN:VCALENDAR...END:VCALENDAR blocks
  */
 export default class ICalendarMultipleVCalendarBlocksRepairStep extends AbstractRepairStep {
-
 	/**
 	 * Please see the corresponding test file for an example of broken calendar-data
 	 *
@@ -84,5 +82,4 @@ export default class ICalendarMultipleVCalendarBlocksRepairStep extends Abstract
 				return match
 			})
 	}
-
 }

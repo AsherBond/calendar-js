@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 
 import { uc } from '../helpers/stringHelper.js'
@@ -28,11 +27,10 @@ import observerTrait from '../traits/observer.js'
  * @class Parameter
  * @classdesc This class represents a property parameters as defined in RFC 5545 Section 3.2
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.2
- * @url
+ * @see https://tools.ietf.org/html/rfc5545#section-3.2
+ * @see
  */
 export default class Parameter extends observerTrait(lockableTrait(class {})) {
-
 	/**
 	 * Constructor
 	 *
@@ -108,10 +106,12 @@ export default class Parameter extends observerTrait(lockableTrait(class {})) {
 
 	/**
 	 * Gets an iterator for all values
+	 *
+	 * @yields {string} A parameter value
 	 */
 	* getValueIterator() {
 		if (this.isMultiValue()) {
-			yield * this.value.slice()[Symbol.iterator]()
+			yield* this.value.slice()[Symbol.iterator]()
 		} else {
 			yield this.value
 		}
@@ -151,5 +151,4 @@ export default class Parameter extends observerTrait(lockableTrait(class {})) {
 		super._modifyContent()
 		this._notifySubscribers()
 	}
-
 }

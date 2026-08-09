@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 
 /**
@@ -25,7 +24,6 @@
  * @classdesc
  */
 export default class AbstractParser {
-
 	/**
 	 * @class
 	 *
@@ -47,7 +45,7 @@ export default class AbstractParser {
 		 * @type {{removeRSVPForAttendees: boolean}}
 		 * @private
 		 */
-		this._options = Object.assign({}, options)
+		this._options = { ...options }
 
 		/**
 		 * A name extracted from the calendar-data
@@ -155,10 +153,11 @@ export default class AbstractParser {
 	/**
 	 * {String|Object} data
 	 *
-	 * @param {any} data The data to parse
-	 * @throws TypeError
+	 * @param {string|object} data The data to parse
+	 * @throws {TypeError}
 	 */
 	parse(data) {
+		void data
 		throw new TypeError('Abstract method not implemented by subclass')
 	}
 
@@ -226,7 +225,7 @@ export default class AbstractParser {
 	/**
 	 * Get a list of all errors that occurred
 	 *
-	 * @return {*[]}
+	 * @return {Error[]}
 	 */
 	getErrorList() {
 		return this._errors.slice()
@@ -244,13 +243,14 @@ export default class AbstractParser {
 	/**
 	 * Gets an option provided
 	 *
+	 * @template T
 	 * @param {string} name The name of the option to get
-	 * @param {*} defaultValue The default value to return if option not provided
-	 * @return {any}
+	 * @param {T} defaultValue The default value to return if option not provided
+	 * @return {T}
 	 * @protected
 	 */
 	_getOption(name, defaultValue) {
-		return Object.prototype.hasOwnProperty.call(this._options, name)
+		return Object.hasOwn(this._options, name)
 			? this._options[name]
 			: defaultValue
 	}
@@ -263,5 +263,4 @@ export default class AbstractParser {
 	static getMimeTypes() {
 		throw new TypeError('Abstract method not implemented by subclass')
 	}
-
 }

@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractValue from './abstractValue.js'
 import DateTimeValue from './dateTimeValue.js'
@@ -28,11 +27,10 @@ import ICAL from 'ical.js'
  * @class PeriodValue
  * @classdesc Wrapper for ICAL.Period
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.9
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/period.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.9
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/period.js
  */
 export default class PeriodValue extends AbstractValue {
-
 	/**
 	 * @inheritDoc
 	 */
@@ -241,5 +239,4 @@ export default class PeriodValue extends AbstractValue {
 		})
 		return PeriodValue.fromICALJs(icalPeriod)
 	}
-
 }

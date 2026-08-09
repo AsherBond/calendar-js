@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent, {
 	advertiseSingleOccurrenceProperty,
@@ -29,10 +28,9 @@ import ICAL from 'ical.js'
 /**
  * This class represents one VCALENDAR block
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.4
  */
 export default class CalendarComponent extends AbstractComponent {
-
 	/**
 	 * Constructor
 	 *
@@ -46,46 +44,58 @@ export default class CalendarComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all VTIMEZONE components
+	 *
+	 * @yields {TimezoneComponent} A VTIMEZONE component
 	 */
 	* getTimezoneIterator() {
-		yield * this.getComponentIterator('vtimezone')
+		yield* this.getComponentIterator('vtimezone')
 	}
 
 	/**
 	 * Gets an iterator over all VObject components
+	 *
+	 * @yields {EventComponent|JournalComponent|ToDoComponent} A calendar object component
 	 */
 	* getVObjectIterator() {
-		yield * this.getEventIterator()
-		yield * this.getJournalIterator()
-		yield * this.getTodoIterator()
+		yield* this.getEventIterator()
+		yield* this.getJournalIterator()
+		yield* this.getTodoIterator()
 	}
 
 	/**
 	 * Gets an iterator over all VEVENT components
+	 *
+	 * @yields {EventComponent} A VEVENT component
 	 */
 	* getEventIterator() {
-		yield * this.getComponentIterator('vevent')
+		yield* this.getComponentIterator('vevent')
 	}
 
 	/**
 	 * Gets an iterator over all VFREEBUSY components
+	 *
+	 * @yields {FreeBusyComponent} A VFREEBUSY component
 	 */
 	* getFreebusyIterator() {
-		yield * this.getComponentIterator('vfreebusy')
+		yield* this.getComponentIterator('vfreebusy')
 	}
 
 	/**
 	 * Gets an iterator over all VJOURNAL components
+	 *
+	 * @yields {JournalComponent} A VJOURNAL component
 	 */
 	* getJournalIterator() {
-		yield * this.getComponentIterator('vjournal')
+		yield* this.getComponentIterator('vjournal')
 	}
 
 	/**
 	 * Gets an iterator over all VTODO components
+	 *
+	 * @yields {ToDoComponent} A VTODO component
 	 */
 	* getTodoIterator() {
-		yield * this.getComponentIterator('vtodo')
+		yield* this.getComponentIterator('vtodo')
 	}
 
 	/**
@@ -146,13 +156,12 @@ export default class CalendarComponent extends AbstractComponent {
 
 		return comp
 	}
-
 }
 
 /**
  * ProductId representing the software that created this calendar-document
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.7.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.7.3
  *
  * @name CalendarComponent#productId
  * @type {string}
@@ -167,7 +176,7 @@ advertiseSingleOccurrenceProperty(CalendarComponent.prototype, {
  * minver and maxver parameters are not supported, since they
  * are virtually used by no calendaring-software
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.7.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.7.4
  *
  * @name CalendarComponent#version
  * @type {string}
@@ -185,7 +194,7 @@ advertiseSingleOccurrenceProperty(CalendarComponent.prototype, {
  *
  * @see https://tools.ietf.org/html/rfc7529
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.7.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.7.1
  *
  * @name CalendarComponent#calendarScale
  * @type {string}
@@ -201,7 +210,7 @@ advertiseSingleOccurrenceProperty(CalendarComponent.prototype, {
  * Method of this calendar-document when being used in an iTIP message
  * Please see https://tools.ietf.org/html/rfc5546#section-3.2 for more information
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.7.2
+ * @see https://tools.ietf.org/html/rfc5545#section-3.7.2
  *
  * @name CalendarComponent#method
  * @type {string}

@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractComponent, {
 	advertiseMultipleOccurrenceProperty,
@@ -30,10 +29,9 @@ import TriggerProperty from '../../properties/triggerProperty.js'
  * @class AlarmComponent
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.6.6
+ * @see https://tools.ietf.org/html/rfc5545#section-3.6.6
  */
 export default class AlarmComponent extends AbstractComponent {
-
 	/**
 	 * Adds a new attendee based on their name and email-address
 	 *
@@ -49,7 +47,7 @@ export default class AlarmComponent extends AbstractComponent {
 	/**
 	 * Gets the trigger property
 	 *
-	 * @url https://tools.ietf.org/html/rfc5545#section-3.8.6.3
+	 * @see https://tools.ietf.org/html/rfc5545#section-3.8.6.3
 	 *
 	 * @return {TriggerProperty}
 	 */
@@ -79,7 +77,6 @@ export default class AlarmComponent extends AbstractComponent {
 		this.deleteAllProperties('TRIGGER')
 		this.addProperty(triggerProperty)
 	}
-
 }
 
 /**
@@ -89,7 +86,7 @@ export default class AlarmComponent extends AbstractComponent {
  * - DISPLAY
  * - EMAIL
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.6.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.6.1
  *
  * @name AlarmComponent#action
  * @type {string}
@@ -100,7 +97,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, 'action')
  * Description for this alarm
  * Can only be used in combination with action DISPLAY and EMAIL
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.5
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.5
  *
  * @name AlarmComponent#description
  * @type {string}
@@ -112,7 +109,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, 'description')
  * Can only be used in combination with action EMAIL
  * Will be used as the EMAIL's subject
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.12
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.12
  *
  * @name AlarmComponent#summary
  * @type {string}
@@ -123,7 +120,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, 'summary')
  * The duration specifies the delay period between repeated alarms.
  * This property must be specified along with the repeat property
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.2.5
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.2.5
  *
  * @name AlarmComponent#duration
  * @type {string}
@@ -134,7 +131,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, 'duration')
  * The number of times an alarm should be repeated.
  * This property must be specified along with the duration property
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.6.2
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.6.2
  *
  * @name AlarmComponent#repeat
  * @type {number}
@@ -145,7 +142,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, 'repeat')
  * This attachment points to a sound file, can only be used in combination
  * with ACTION AUDIO
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.1.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.1.1
  *
  * @name AlarmComponent#attachment
  * @type {AttachmentProperty}
@@ -158,7 +155,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, {
 /**
  * Get an iterator over all attendees
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name AlarmComponent#getAttendeeIterator
  * @function
@@ -168,7 +165,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, {
 /**
  * Get a list of all attendees
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name AlarmComponent#getAttendeeList
  * @function
@@ -178,7 +175,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, {
 /**
  * Adds a new attendee to this alarm-component
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name AlarmComponent#addAttendee
  * @function
@@ -188,7 +185,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, {
 /**
  * Removes an attendee from this alarm-component
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name AlarmComponent#removeAttendee
  * @function
@@ -198,7 +195,7 @@ advertiseSingleOccurrenceProperty(AlarmComponent.prototype, {
 /**
  * Removes all attendees from this alarm-component
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.4.1
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.4.1
  *
  * @name AlarmComponent#clearAllAttendees
  * @function

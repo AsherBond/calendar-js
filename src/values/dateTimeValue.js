@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractValue from './abstractValue.js'
 import DurationValue from './durationValue.js'
@@ -27,13 +26,12 @@ import ICAL from 'ical.js'
  * @class DateTimeValue
  * @classdesc Wrapper for ICAL.Time
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.4
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.5
- * @url https://tools.ietf.org/html/rfc5545#section-3.3.12
- * @url https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/time.js
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.4
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.5
+ * @see https://tools.ietf.org/html/rfc5545#section-3.3.12
+ * @see https://github.com/mozilla-comm/ical.js/blob/master/lib/ical/time.js
  */
 export default class DateTimeValue extends AbstractValue {
-
 	/**
 	 * Gets the year of the stored date-time-value
 	 *
@@ -447,7 +445,6 @@ export default class DateTimeValue extends AbstractValue {
 			: undefined)
 		return DateTimeValue.fromICALJs(icalValue)
 	}
-
 }
 
 DateTimeValue.SUNDAY = ICAL.Time.SUNDAY

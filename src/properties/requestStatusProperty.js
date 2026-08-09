@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import Property from './property.js'
 import { createProperty } from '../factories/icalFactory.js'
@@ -27,10 +26,9 @@ import { lc } from '../helpers/stringHelper.js'
  * @class RequestStatusProperty
  * @classdesc
  *
- * @url https://tools.ietf.org/html/rfc5545#section-3.8.8.3
+ * @see https://tools.ietf.org/html/rfc5545#section-3.8.8.3
  */
 export default class RequestStatusProperty extends Property {
-
 	/**
 	 * @inheritDoc
 	 */
@@ -143,15 +141,12 @@ export default class RequestStatusProperty extends Property {
 
 	/**
 	 * @inheritDoc
-	 *
-	 * TODO: this is an ugly hack right now.
-	 * As soon as the value is an array, we assume it's multivalue
-	 * but REQUEST-STATUS is a (the one and only besides GEO) structured value and is also
-	 * stored inside an array.
-	 *
-	 * Calling icalProperty.setValues will throw an error
 	 */
 	toICALJs() {
+		// TODO: this is an ugly hack right now.
+		// As soon as the value is an array, we assume it's multivalue,
+		// but REQUEST-STATUS is a structured value stored inside an array.
+		// Calling icalProperty.setValues will throw an error.
 		const icalProperty = createProperty(lc(this.name))
 		icalProperty.setValue(this.value)
 
@@ -172,7 +167,6 @@ export default class RequestStatusProperty extends Property {
 	static fromCodeAndMessage(code, message) {
 		return new RequestStatusProperty('REQUEST-STATUS', [code.toString(), message])
 	}
-
 }
 
 // All request statuses registered in RFC 5546

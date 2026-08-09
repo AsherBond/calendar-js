@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 
 /**
@@ -25,7 +24,6 @@
  * @classdesc A repair step is used to fix calendar-data before it is parsed
  */
 export default class AbstractRepairStep {
-
 	/**
 	 * @class
 	 */
@@ -39,6 +37,7 @@ export default class AbstractRepairStep {
 	 * @param {string} input String representation of the data to repair
 	 */
 	repair(input) {
+		void input
 		throw new TypeError('Abstract method not implemented by subclass')
 	}
 
@@ -48,5 +47,4 @@ export default class AbstractRepairStep {
 	static priority() {
 		return 0
 	}
-
 }

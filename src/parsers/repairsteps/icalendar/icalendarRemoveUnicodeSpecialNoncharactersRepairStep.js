@@ -17,7 +17,6 @@
  *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
  */
 import AbstractRepairStep from '../abstractRepairStep.js'
 
@@ -26,7 +25,6 @@ import AbstractRepairStep from '../abstractRepairStep.js'
  * @classdesc This repair step removes Unicode specials non-characters i.e. U+FFFE & U+FFFF
  */
 export default class ICalendarRemoveUnicodeSpecialNoncharactersRepairStep extends AbstractRepairStep {
-
 	/**
 	 * Please see the corresponding test file for an example of broken calendar-data
 	 *
@@ -36,5 +34,4 @@ export default class ICalendarRemoveUnicodeSpecialNoncharactersRepairStep extend
 		return ics
 			.replace(/(\uFFFF|\uFFFE)/g, '')
 	}
-
 }
