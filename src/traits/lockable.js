@@ -22,7 +22,7 @@ import ModificationNotAllowedError from '../errors/modificationNotAllowedError.j
 
 /**
  *
- * @param baseClass
+ * @param {new (...args: unknown[]) => object} baseClass Base class to extend
  */
 export default function lockableTrait(baseClass) {
 	/**
@@ -32,7 +32,7 @@ export default function lockableTrait(baseClass) {
 		/**
 		 * Constructor
 		 *
-		 * @param {...any} args
+		 * @param {...any} args Arguments forwarded to the base class constructor
 		 */
 		constructor(...args) {
 			super(...args)

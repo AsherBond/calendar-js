@@ -21,7 +21,7 @@
 
 /**
  *
- * @param baseClass
+ * @param {new (...args: unknown[]) => object} baseClass Base class to extend
  */
 export default function observerTrait(baseClass) {
 	/**
@@ -31,7 +31,7 @@ export default function observerTrait(baseClass) {
 		/**
 		 * Constructor
 		 *
-		 * @param {...any} args
+		 * @param {...any} args Arguments forwarded to the base class constructor
 		 */
 		constructor(...args) {
 			super(...args)
@@ -71,7 +71,7 @@ export default function observerTrait(baseClass) {
 		/**
 		 * Notify all subscribed handlers
 		 *
-		 * @param {...any} args
+		 * @param {...any} args Arguments forwarded to subscribed handlers
 		 * @protected
 		 */
 		_notifySubscribers(...args) {
