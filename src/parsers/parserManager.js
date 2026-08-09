@@ -21,6 +21,12 @@
 import ICalendarParser from './icalendarParser.js'
 
 /**
+ * A parser class that can be instantiated and reports its supported MIME types.
+ *
+ * @typedef {{new (options?: object): AbstractParser, getMimeTypes(): string[]}} ParserConstructor
+ */
+
+/**
  * @class ParserManager
  * @classdesc
  */
@@ -32,7 +38,7 @@ export default class ParserManager {
 		/**
 		 * List of supported parsers
 		 *
-		 * @type {Function[]}
+		 * @type {ParserConstructor[]}
 		 */
 		this._parsers = []
 	}
@@ -75,7 +81,7 @@ export default class ParserManager {
 	/**
 	 * Registers a parser
 	 *
-	 * @param {Function} parser The parser to register
+	 * @param {ParserConstructor} parser The parser to register
 	 */
 	registerParser(parser) {
 		this._parsers.push(parser)
