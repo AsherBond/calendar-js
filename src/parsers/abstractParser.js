@@ -157,6 +157,7 @@ export default class AbstractParser {
 	 * @throws TypeError
 	 */
 	parse(data) {
+		void data
 		throw new TypeError('Abstract method not implemented by subclass')
 	}
 

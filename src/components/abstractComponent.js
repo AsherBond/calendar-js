@@ -559,6 +559,7 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
 	 * @protected
 	 */
 	static _getConstructorForComponentName(componentName) {
+		void componentName
 		return AbstractComponent
 	}
 
@@ -591,6 +592,7 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
  * @param {boolean} advertiseValueOnly Whether to advertise the value only or the entire property
  */
 export function advertiseSingleOccurrenceProperty(prototype, options, advertiseValueOnly = true) {
+	void advertiseValueOnly
 	options = getDefaultOncePropConfig(options)
 
 	Object.defineProperty(prototype, options.name, {

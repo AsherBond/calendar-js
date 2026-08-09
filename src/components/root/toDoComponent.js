@@ -102,6 +102,8 @@ export default class ToDoComponent extends AbstractRecurringComponent {
 	 * @param {DurationValue} defaultTimedDuration The default timed duration if moving from all-day to timed
 	 */
 	shiftByDuration(delta, allDay, defaultTimezone, defaultAllDayDuration, defaultTimedDuration) {
+		void defaultAllDayDuration
+		void defaultTimedDuration
 		const currentAllDay = this.isAllDay()
 
 		if (!this.hasProperty('dtstart') && !this.hasProperty('due')) {
