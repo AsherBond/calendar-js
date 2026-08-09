@@ -708,7 +708,7 @@ export default class RecurrenceManager {
 			// If we are dealing with tasks, we will have to compare to the due-date
 			// etc.
 			// For now we are only implementing events, other components will come later
-			let compareDate = null
+			let compareDate
 			switch (uc(occurrence.name)) {
 				case 'VEVENT':
 				case 'VTODO':
