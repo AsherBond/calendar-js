@@ -141,15 +141,12 @@ export default class RequestStatusProperty extends Property {
 
 	/**
 	 * @inheritDoc
-	 *
-	 * TODO: this is an ugly hack right now.
-	 * As soon as the value is an array, we assume it's multivalue
-	 * but REQUEST-STATUS is a (the one and only besides GEO) structured value and is also
-	 * stored inside an array.
-	 *
-	 * Calling icalProperty.setValues will throw an error
 	 */
 	toICALJs() {
+		// TODO: this is an ugly hack right now.
+		// As soon as the value is an array, we assume it's multivalue,
+		// but REQUEST-STATUS is a structured value stored inside an array.
+		// Calling icalProperty.setValues will throw an error.
 		const icalProperty = createProperty(lc(this.name))
 		icalProperty.setValue(this.value)
 
