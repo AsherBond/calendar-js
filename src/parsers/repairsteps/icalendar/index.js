@@ -30,6 +30,8 @@ import ICalendarConvertInvalidDateTimeValuesRepairStep from './icalendarConvertI
 
 /**
  * Get an iterator over all repair steps for iCalendar documents
+ *
+ * @yields {typeof AbstractRepairStep} A repair-step constructor
  */
 export function* getRepairSteps() {
 	yield ICalendarAddMissingUIDRepairStep

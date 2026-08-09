@@ -106,6 +106,8 @@ export default class Parameter extends observerTrait(lockableTrait(class {})) {
 
 	/**
 	 * Gets an iterator for all values
+	 *
+	 * @yields {string} A parameter value
 	 */
 	* getValueIterator() {
 		if (this.isMultiValue()) {

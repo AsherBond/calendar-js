@@ -36,6 +36,7 @@ import FreeBusyComponent from './components/root/freeBusyComponent.js'
  * @param {string} ics The calendar-data to parse
  * @param {DateTimeValue} start The start of the queried time-range
  * @param {DateTimeValue} end The end of the queried time-range
+ * @yields {AbstractRecurringComponent} An occurrence in the requested time range
  */
 export function* parseICSAndGetAllOccurrencesBetween(ics, start, end) {
 	const parserManager = getParserManager()

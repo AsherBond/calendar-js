@@ -195,6 +195,8 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
 	 * Returns iterator for all properties of a given propertyName
 	 * or if no propertyName was given over all available properties
 	 *
+	 * @yields {Property} A property matching the requested name
+	 *
 	 * @param {string=} propertyName Name of the property to get an iterator for
 	 */
 	* getPropertyIterator(propertyName = null) {
@@ -218,6 +220,8 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
 	 *
 	 * @param {string} propertyName The name of the property
 	 * @param {string | null} lang The lang to query
+	 * @yields {Property} A property matching the requested language
+	 *
 	 * @private
 	 */
 	* _getAllOfPropertyByLang(propertyName, lang) {
@@ -340,6 +344,8 @@ export default class AbstractComponent extends observerTrait(lockableTrait(class
 	/**
 	 * Returns iterator for all components of a given componentName
 	 * or if no componentName was given over all available components
+	 *
+	 * @yields {AbstractComponent} A component matching the requested name
 	 *
 	 * @param {string=} componentName The name of the component
 	 */

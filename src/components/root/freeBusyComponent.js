@@ -72,6 +72,8 @@ export default class FreeBusyComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all FreeBusyProperties
+	 *
+	 * @yields {FreeBusyProperty} A free-busy property
 	 */
 	* getFreeBusyIterator() {
 		yield* this.getPropertyIterator('FREEBUSY')

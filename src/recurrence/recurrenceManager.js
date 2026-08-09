@@ -101,6 +101,8 @@ export default class RecurrenceManager {
 
 	/**
 	 * Gets an iterator over all registered recurrence exceptions of this calendar-document
+	 *
+	 * @yields {AbstractRecurringComponent} A recurrence exception
 	 */
 	* getRecurrenceExceptionIterator() {
 		yield* this._recurrenceExceptionItems.values()
@@ -292,6 +294,8 @@ export default class RecurrenceManager {
 
 	/**
 	 * Gets an iterator over all recurrence rules
+	 *
+	 * @yields {RecurValue} A recurrence rule
 	 */
 	* getRecurrenceRuleIterator() {
 		for (const property of this._masterItem.getPropertyIterator('RRULE')) {
@@ -352,6 +356,7 @@ export default class RecurrenceManager {
 	 *
 	 * @param {boolean} isNegative Whether or not to get EXDATES
 	 * @param {string} valueType Limit type of EXDATES
+	 * @yields {DateTimeValue|PeriodValue} A recurrence date
 	 */
 	* getRecurrenceDateIterator(isNegative = false, valueType = null) {
 		for (const property of this._getPropertiesForRecurrenceDate(isNegative, valueType)) {
@@ -523,6 +528,7 @@ export default class RecurrenceManager {
 	 * @param {boolean} isNegative Whether we are dealing with an EXDATE or RDATE
 	 * @param {string | null} valueType The type of values to get
 	 * @param {ICAL.Timezone=} timezoneId Filter by timezone
+	 * @yields {Property} A recurrence-date property matching the filters
 	 * @private
 	 */
 	* _getPropertiesForRecurrenceDate(isNegative, valueType, timezoneId = null) {
@@ -676,6 +682,7 @@ export default class RecurrenceManager {
 	 *
 	 * @param {DateTimeValue} queriedTimeRangeStart Start of time-range
 	 * @param {DateTimeValue} queriedTimeRangeEnd End of time-range
+	 * @yields {AbstractRecurringComponent} An occurrence in the requested time range
 	 */
 	* getAllOccurrencesBetweenIterator(queriedTimeRangeStart, queriedTimeRangeEnd) {
 		if (!this.masterItem.isRecurring()) {

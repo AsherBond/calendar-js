@@ -44,6 +44,8 @@ export default class CalendarComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all VTIMEZONE components
+	 *
+	 * @yields {TimezoneComponent} A VTIMEZONE component
 	 */
 	* getTimezoneIterator() {
 		yield* this.getComponentIterator('vtimezone')
@@ -51,6 +53,8 @@ export default class CalendarComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all VObject components
+	 *
+	 * @yields {EventComponent|JournalComponent|ToDoComponent} A calendar object component
 	 */
 	* getVObjectIterator() {
 		yield* this.getEventIterator()
@@ -60,6 +64,8 @@ export default class CalendarComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all VEVENT components
+	 *
+	 * @yields {EventComponent} A VEVENT component
 	 */
 	* getEventIterator() {
 		yield* this.getComponentIterator('vevent')
@@ -67,6 +73,8 @@ export default class CalendarComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all VFREEBUSY components
+	 *
+	 * @yields {FreeBusyComponent} A VFREEBUSY component
 	 */
 	* getFreebusyIterator() {
 		yield* this.getComponentIterator('vfreebusy')
@@ -74,6 +82,8 @@ export default class CalendarComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all VJOURNAL components
+	 *
+	 * @yields {JournalComponent} A VJOURNAL component
 	 */
 	* getJournalIterator() {
 		yield* this.getComponentIterator('vjournal')
@@ -81,6 +91,8 @@ export default class CalendarComponent extends AbstractComponent {
 
 	/**
 	 * Gets an iterator over all VTODO components
+	 *
+	 * @yields {ToDoComponent} A VTODO component
 	 */
 	* getTodoIterator() {
 		yield* this.getComponentIterator('vtodo')

@@ -39,6 +39,8 @@ export default class ConferenceProperty extends Property {
 	/**
 	 * Iterator that iterates over all supported features
 	 * of the conference system
+	 *
+	 * @yields {string} A supported conference feature
 	 */
 	* getFeatureIterator() {
 		if (!this.hasParameter('FEATURE')) {

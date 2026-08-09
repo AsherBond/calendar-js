@@ -187,6 +187,8 @@ export default class Property extends observerTrait(lockableTrait(class {})) {
 
 	/**
 	 * Gets an iterator over all values
+	 *
+	 * @yields {string|number|AbstractValue} A property value
 	 */
 	* getValueIterator() {
 		if (this.isMultiValue()) {
@@ -263,6 +265,8 @@ export default class Property extends observerTrait(lockableTrait(class {})) {
 
 	/**
 	 * Gets an iterator over all available parameters
+	 *
+	 * @yields {Parameter} A property parameter
 	 */
 	* getParametersIterator() {
 		yield* this._parameters.values()
