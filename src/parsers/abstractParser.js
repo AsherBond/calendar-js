@@ -154,7 +154,7 @@ export default class AbstractParser {
 	 * {String|Object} data
 	 *
 	 * @param {any} data The data to parse
-	 * @throws TypeError
+	 * @throws {TypeError}
 	 */
 	parse(data) {
 		void data

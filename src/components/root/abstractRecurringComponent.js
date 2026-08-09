@@ -552,7 +552,6 @@ export default class AbstractRecurringComponent extends AbstractComponent {
 	 * it will remove this and all future occurrences
 	 *
 	 * @param {boolean} thisAndAllFuture Whether to create an exception for this and all future
-	 * @throws EmptyRecurrenceSetError Thrown, when deleting an occurrence results in no more events
 	 * @return {boolean} true if this deleted the last occurrence in set, false if there are occurrences left
 	 */
 	removeThisOccurrence(thisAndAllFuture = false) {
