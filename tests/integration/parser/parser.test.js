@@ -2252,7 +2252,7 @@ it ('edit first occurrence - this and future', () => {
 		'DTSTAMP:20190703T172836Z\r\n' +
 		'DTSTART;TZID=Europe/Berlin:20190717T090000\r\n' +
 		'SEQUENCE:0\r\n' +
-		'RECURRENCE-ID;TZID=Europe/Berlin:20190719T080000\r\n' +
+		'RECURRENCE-ID;TZID=Europe/Berlin:20190715T100000\r\n' +
 		'END:VEVENT\r\n' +
 		'BEGIN:VEVENT\r\n' +
 		'CREATED:20190703T172822Z\r\n' +
@@ -2265,7 +2265,7 @@ it ('edit first occurrence - this and future', () => {
 		'DTSTAMP:20190703T172836Z\r\n' +
 		'DTSTART;TZID=Europe/Berlin:20190731T090000\r\n' +
 		'SEQUENCE:0\r\n' +
-		'RECURRENCE-ID;TZID=Europe/Berlin:20190801T090000\r\n' +
+		'RECURRENCE-ID;TZID=Europe/Berlin:20190729T100000\r\n' +
 		'END:VEVENT\r\n' +
 		'BEGIN:VEVENT\r\n' +
 		'CREATED:20190703T172822Z\r\n' +
@@ -2279,7 +2279,7 @@ it ('edit first occurrence - this and future', () => {
 		'DTSTAMP:20190703T172836Z\r\n' +
 		'DTSTART;TZID=Europe/Berlin:20190714T090000\r\n' +
 		'SEQUENCE:0\r\n' +
-		'RECURRENCE-ID;TZID=Europe/Berlin:20190719T080000\r\n' +
+		'RECURRENCE-ID;TZID=Europe/Berlin:20190703T100000\r\n' +
 		'END:VEVENT\r\n' +
 		'BEGIN:VEVENT\r\n' +
 		'CREATED:20190703T172822Z\r\n' +
