@@ -812,14 +812,17 @@ export default class RecurrenceManager {
 			exdate.addDuration(difference)
 		}
 
-		for (const recurrenceException of this.getRecurrenceExceptionIterator()) {
-			// We don't edit RDATES, so don't update recurrence-ids if they
-			// are based on an RDATE
-			if (this.hasRecurrenceDate(false, recurrenceException.recurrenceId)) {
-				continue
-			}
-
+		// Snapshot the exceptions first because mutating the live Map while iterating it makes
+		// the iterator revisit reinserted items, causing an infinite loop.
+		const recurrenceExceptions = this.getRecurrenceExceptionList()
+		// Remove all rule-based exceptions before reinserting any shifted keys. This
+		// prevents adjacent exceptions from overwriting entries at still-occupied keys.
+		for (const recurrenceException of recurrenceExceptions.filter((recurrenceException) => !this.hasRecurrenceDate(false, recurrenceException.recurrenceId))) {
 			this.removeRecurrenceException(recurrenceException)
+		}
+		// Shift and relate the exceptions again under their new recurrence IDs, rebuilding
+		// the regular and range-exception indexes in the process.
+		for (const recurrenceException of recurrenceExceptions.filter((recurrenceException) => !this.hasRecurrenceDate(false, recurrenceException.recurrenceId))) {
 			recurrenceException.recurrenceId.addDuration(difference)
 			this.relateRecurrenceException(recurrenceException)
 		}
