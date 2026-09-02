@@ -1,3 +1,25 @@
+## [8.1.7](https://github.com/nextcloud/calendar-js/compare/v8.1.6...v8.1.7) (2026-09-02)
+
+
+### Bug Fixes
+
+* **deps:** bump vite from 6.3.6 to v6.4.1 ([#843](https://github.com/nextcloud/calendar-js/issues/843)) ([563fbff](https://github.com/nextcloud/calendar-js/commit/563fbff1f5d6dd58cbd2d4ab117734ab7839128d))
+* **deps:** bump vite from 6.4.1 to v6.4.2 ([#866](https://github.com/nextcloud/calendar-js/issues/866)) ([6db2c0c](https://github.com/nextcloud/calendar-js/commit/6db2c0c0cccaafc15396839d2923700bf6e039bb))
+* **deps:** Fix npm audit ([7d120a9](https://github.com/nextcloud/calendar-js/commit/7d120a9baffacff139dd927dac14089a756e3154))
+* **deps:** Fix npm audit ([0916560](https://github.com/nextcloud/calendar-js/commit/09165609069b386d0363b38dc64444c48b14c07a))
+* **deps:** Fix npm audit ([cecf511](https://github.com/nextcloud/calendar-js/commit/cecf51107046bae0330197247a05b2b0c0c1ed56))
+* **deps:** Fix npm audit ([2cac893](https://github.com/nextcloud/calendar-js/commit/2cac893836cca676ce26c634099cc9ac65e3102e))
+* **deps:** Fix npm audit ([e87ed50](https://github.com/nextcloud/calendar-js/commit/e87ed50fcc8cdf6c58b1faf0ad3b1945e5aced3c))
+* **deps:** Fix npm audit ([e77548d](https://github.com/nextcloud/calendar-js/commit/e77548da5aa58b889ab942534bdc1207bed1bb7a))
+* **deps:** Fix npm audit ([c4386b1](https://github.com/nextcloud/calendar-js/commit/c4386b13c89f7b0fc5c4c88ba3b8ce38940a154c))
+* **deps:** Fix npm audit ([0009a5d](https://github.com/nextcloud/calendar-js/commit/0009a5d2c03a8fcaf63e8ab70c38fafe8ce12baf))
+* **deps:** Fix npm audit ([78deb8b](https://github.com/nextcloud/calendar-js/commit/78deb8bba1af98009e6607beb8bfe58fc8c9558e))
+* **deps:** Fix npm audit ([f097be6](https://github.com/nextcloud/calendar-js/commit/f097be661a8c0df26f9e3798e973c5619caa5a4f))
+* **deps:** Fix npm audit ([d97393c](https://github.com/nextcloud/calendar-js/commit/d97393cbd9c283abe44838a354e3e72e1d13dba2))
+* recurrance recalulation with excemption ([a796080](https://github.com/nextcloud/calendar-js/commit/a7960806722e1482b519ccebb221d219bcfedb9f))
+
+
+
 ## [8.1.6](https://github.com/nextcloud/calendar-js/compare/v8.1.5...v8.1.6) (2025-08-27)
 
 
