@@ -1,14 +1,20 @@
 {
   "name": "@nextcloud/calendar-js",
-  "version": "9.0.0",
+  "version": "8.1.8",
   "description": "Small library that wraps ICAL.js and provide more convenient means for editing",
   "type": "module",
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.mts",
+  "main": "dist/index.cjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "files": [
@@ -54,19 +60,16 @@
     "@nextcloud/browserslist-config": "^3.1.2",
     "@nextcloud/eslint-config": "^9.0.1",
     "@nextcloud/eslint-plugin": "^2.2.1",
-    "@nextcloud/vite-config": "^3.0.0-beta.1",
+    "@nextcloud/vite-config": "^2.5.4",
     "babel-jest": "^30.5.2",
     "eslint": "^10.15.0",
     "jest": "^30.5.2",
     "typescript": "^6.0.3",
-    "vite": "^8.3.8"
+    "vite": "^7.3.8"
   },
   "peerDependencies": {
     "@nextcloud/timezones": "^1.1.0",
     "ical.js": "^2.2.1"
-  },
-  "overrides": {
-    "rolldown-plugin-dts": "^0.30.2"
   },
   "babel": {
     "presets": [
