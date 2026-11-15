@@ -8,5 +8,5 @@
     "types": [],
     "skipLibCheck": false
   },
-  "include": ["*.mts", "*.cts"]
+  "include": ["*.mts"]
 }
