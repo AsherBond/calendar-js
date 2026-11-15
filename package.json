@@ -67,7 +67,7 @@
     "vite": "^7.3.7"
   },
   "peerDependencies": {
-    "@nextcloud/timezones": "^1.0.2",
+    "@nextcloud/timezones": "^1.1.0",
     "ical.js": "^2.2.1"
   },
   "babel": {
